@@ -1,42 +1,192 @@
-# Digital Self-Interference Cancellation for 6G Full-Duplex Communication
+# 6G Digital Self-Interference Cancellation
 
 ## Overview
 
-This project investigates **digital self-interference (SI) cancellation** for **in-band full-duplex (IBFD) communication systems** targeting future 6G networks.
+This project investigates **digital self-interference cancellation (SIC)** for **in-band full-duplex (IBFD) communication systems** targeting future 6G networks.
 
-In full-duplex communication, transmission and reception occur simultaneously on the same frequency band. This creates a strong self-interference signal at the receiver, which can significantly degrade communication performance.
+In full-duplex communication, transmission and reception occur simultaneously on the same frequency band. This can introduce strong self-interference at the receiver and significantly affect communication performance.
 
-The project focuses on the use of **adaptive digital cancellation algorithms**, particularly:
-
-- Least Mean Squares (LMS)
-- Steepest Descent (SD)
-
-MATLAB-based simulations were used to model, evaluate and compare the performance of the cancellation approaches.
+The project focuses on MATLAB-based modelling and simulation of digital self-interference cancellation using **Least Mean Squares (LMS)** and **Steepest Descent (SD)** adaptive algorithms.
 
 ---
 
-## Objectives
+## Project Objectives
 
 The main objectives of this project were to:
 
-1. Investigate the self-interference problem in in-band full-duplex communication.
-2. Develop a MATLAB-based digital self-interference cancellation model.
-3. Implement and evaluate LMS and Steepest Descent algorithms.
-4. Compare channel estimation performance across different numbers of iterations.
-5. Analyse communication performance using Bit Error Rate (BER).
-6. Investigate BER performance across different Signal-to-Noise Ratio (SNR) conditions.
-7. Evaluate the suitability of adaptive digital cancellation for future 6G communication systems.
+- Investigate self-interference in in-band full-duplex communication.
+- Develop a MATLAB-based simulation model.
+- Implement adaptive channel estimation approaches.
+- Compare LMS and Steepest Descent algorithms.
+- Evaluate channel estimation error.
+- Analyse BER performance across different iteration counts.
+- Investigate BER performance under different SNR conditions.
+- Examine OFDM-based communication performance.
 
 ---
 
 ## System Concept
 
-The overall digital self-interference cancellation process can be represented as:
+The digital self-interference cancellation process consists of estimating the interference component and removing it from the received signal.
 
-**Transmitter → Full-Duplex Channel → Receiver → SI Estimation → Digital Cancellation → Desired Signal**
+The general system concept is:
 
-The received signal contains both the desired signal and residual self-interference. An adaptive digital cancellation algorithm estimates the interference component and subtracts it from the received signal.
+**Transmitter → Full-Duplex Channel → Receiver → Self-Interference Estimation → Digital Cancellation → Desired Signal**
 
+---
+
+## System Flowchart
+
+![Digital SIC System Flowchart](Digital_SIC_System_Flowchart.png)
+
+---
+
+# Methodology
+
+## LMS Adaptive Algorithm
+
+The **Least Mean Squares (LMS)** algorithm was investigated as an adaptive approach for estimating the self-interference channel.
+
+The filter coefficients are updated iteratively according to the estimation error.
+
+The general LMS update equation is:
+
+\[
+w(n+1) = w(n) + \mu e(n)x(n)
+\]
+
+where:
+
+- `w(n)` represents the adaptive filter coefficients.
+- `μ` represents the step size.
+- `e(n)` represents the estimation error.
+- `x(n)` represents the input signal.
+
+---
+
+## Steepest Descent Algorithm
+
+The **Steepest Descent (SD)** algorithm was evaluated as a second adaptive channel estimation approach.
+
+The algorithm updates the filter coefficients in a direction intended to minimise the mean-square error.
+
+LMS and Steepest Descent were compared using simulation-based performance metrics.
+
+---
+
+# Performance Evaluation
+
+The algorithms were evaluated using:
+
+- Channel estimation error
+- Bit Error Rate (BER)
+- Iteration count
+- Signal-to-Noise Ratio (SNR)
+
+These metrics were used to investigate convergence and communication-system performance.
+
+---
+
+## Channel Estimation Error
+
+The channel estimation error was evaluated for different numbers of iterations to compare the convergence behaviour of LMS and Steepest Descent.
+
+![LMS vs SD Channel Estimation Error](LMS_vs_SD_Channel_Estimation_Error.png)
+
+---
+
+## BER vs Iterations
+
+BER performance was evaluated as the number of adaptive iterations increased.
+
+![LMS vs SD BER vs Iterations](LMS_vs_SD_BER_vs_Iterations.png)
+
+---
+
+## BER vs SNR
+
+The relationship between BER and SNR was investigated to evaluate communication performance under different signal-to-noise conditions.
+
+![LMS vs SD BER vs SNR](LMS_vs_SD_BER_vs_SNR.png)
+
+---
+
+## OFDM Performance
+
+An OFDM-based communication scenario was also investigated to examine BER performance in a multicarrier communication system.
+
+![OFDM BER Performance](OFDM_BER_Performance.png)
+
+---
+
+# Key Findings
+
+The simulation results demonstrate the application of adaptive digital signal processing techniques to self-interference mitigation in full-duplex communication systems.
+
+The LMS and Steepest Descent approaches were compared based on:
+
+- Channel estimation error
+- BER performance
+- Number of iterations
+- SNR conditions
+- Convergence behaviour
+
+The results provide insight into the performance trade-offs associated with adaptive digital self-interference cancellation.
+
+---
+
+# Engineering Skills Demonstrated
+
+### Telecommunications & Communications
+
+- Full-duplex communication
+- Self-interference cancellation
+- OFDM
+- MIMO communication concepts
+- Channel estimation
+- Digital signal processing
+- BER and SNR analysis
+
+### Engineering & Analysis
+
+- System modelling
+- MATLAB simulation
+- Algorithm comparison
+- Performance evaluation
+- Engineering problem solving
+- Data analysis
+- Verification and interpretation of simulation results
+- Technical documentation
+
+---
+
+# Tools & Technologies
+
+| Tool / Technology | Application |
+|---|---|
+| MATLAB | Communication-system modelling and simulation |
+| LMS | Adaptive channel estimation |
+| Steepest Descent | Adaptive channel estimation |
+| OFDM | Multicarrier communication modelling |
+| MIMO | Wireless communication system modelling |
+| GitHub | Project documentation and version control |
+
+---
+
+# Project Structure
+
+The repository currently contains the project documentation and simulation results:
+
+```text
+6G-Digital-Self-Interference-Cancellation/
+│
+├── README.md
+│
+├── Digital_SIC_System_Flowchart.png
+├── LMS_vs_SD_Channel_Estimation_Error.png
+├── LMS_vs_SD_BER_vs_Iterations.png
+├── LMS_vs_SD_BER_vs_SNR.png
+└── OFDM_BER_Performance.png
 ---
 
 ## System Flowchart
