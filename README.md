@@ -57,3 +57,13 @@ Channel Estimation
                    |
                    v
         Performance Analysis
+
+
+
+### One important change before you paste it
+
+I would **not leave the README claiming anything that isn't actually represented by the files in the repository**. In particular, check that these two image paths actually exist:
+
+```text
+Results/channel_estimation_error.png
+Results/performance_comparison.png
