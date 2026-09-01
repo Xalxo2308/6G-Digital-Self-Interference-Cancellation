@@ -351,9 +351,13 @@ The methodology is relevant to engineering environments involving:
 ├── README.md
 │
 ├── MATLAB/
-│   ├── LMS_Estimate.m
+│   ├── main.m
+│   ├── lms.m
 │   ├── SteepestDescent.m
-│   └── main_simulation.m
+│   ├── Mod.m
+│   ├── RC.m
+│   ├── RRC.m
+│   └── RRC_FR.m
 │
 ├── results/
 │   ├── LMS_vs_SD_Channel_Estimation_Error.png
